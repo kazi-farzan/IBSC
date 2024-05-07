@@ -1,0 +1,47 @@
+/* Disable scrollbar for the entire page */
+body {
+  overflow: hidden;
+}
+
+/* Hide scrollbar for WebKit-based browsers */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Scrollbar Settings */
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar in Chrome, Safari, and Opera */
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* Hides the scrollbar in IE and Edge */
+  scrollbar-width: none; /* Hides the scrollbar in Firefox */
+}
+
+/* Style the scrollbar for WebKit-based browsers */
+.main::-webkit-scrollbar {
+  width: 10px; /* Adjust the width of the scrollbar */
+}
+
+.main::-webkit-scrollbar-track {
+  background-color: transparent; /* Set the background color of the track */
+}
+
+.main::-webkit-scrollbar-thumb {
+  background-color: rgba(44, 62, 80, 0.5); /* Set the initial color of the thumb */
+  border-radius: 5px; /* Add rounded corners to the thumb */
+}
+
+.main::-webkit-scrollbar-thumb:hover {
+  background-color: #2c3e50; /* Set the color of the thumb on hover */
+}
+
+/* Style the scrollbar for Firefox */
+.main {
+  scrollbar-width: thin; /* Set the width of the scrollbar */
+  scrollbar-color: #34495E transparent; /* Set the initial color of the thumb and track */
+}
+
+.main:hover {
+  scrollbar-color: #2C3E50 transparent; /* Set the color of the thumb on hover */
+}

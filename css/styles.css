@@ -1,7 +1,4 @@
-/* Tailwind CSS Overrides */
-/* .container {
-  max-width: 100%;
-} */
+
 .glass-element {
   background: rgba(52, 73, 94, 0.95);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -10,39 +7,6 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.card hr {
-  margin-top: auto;
-  /* Pushes the hr to the bottom */
-}
-
-.card {
-  border-color: #2880B9;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  display: inline-block;
-  /* Changed display property */
-  margin-right: 10px;
-  /* Optional: Add margin between cards */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* Aligns items with equal space between them */
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #2ECC71;
-  box-shadow: 0 8px 12px rgba(46, 204, 113, 0.5);
-}
-
-.card:hover>.card-title-name {
-  color: #2ECC71;
-}
-
-.card-title-name {
-  transition: all 0.3s ease;
-  color: #D9E4EC;
-}
 
 .guideline-button {
   border-color: #2ECC71;
@@ -93,9 +57,72 @@
 
 .step-content {
   display: none;
-  transition: all 0.3s ease; /* Add transition for smooth visibility change */
+  transition: all 0.1s ease;
 }
 
 .step-content.visible {
   display: block;
+}
+
+.step-content li {
+  opacity: 0;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+}
+
+.step-content.visible li {
+  animation-name: fadeInRight;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+/* Additional CSS for sidebar and main */
+.sidebar {
+  min-height: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main {
+  padding: 24px;
+  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 33.33% 66.67%;
+  height: 100vh;
+  min-width:100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container-1 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the container takes up the full viewport height */
+}
+
+.container-1 > * {
+  flex-shrink: 0; /* Prevent elements from shrinking */
+}
+
+.container-1 > .container {
+  flex-grow: 1; /* Allow the main content to grow and fill the remaining space */
 }

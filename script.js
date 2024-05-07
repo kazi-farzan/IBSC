@@ -12,6 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
           element.classList.remove('visible');
         }
       });
+
+      // Apply animation delay to each list item
+      const listItems = content.querySelectorAll('li');
+      let delay = 0;
+      listItems.forEach(function(item) {
+        setTimeout(function() {
+          item.style.animationDelay = `${delay}s`;
+        }, 50); // Adjust the delay between each item as needed
+        delay += 0.1; // Adjust the delay increment as needed
+      });
     });
   });
 });

@@ -1,0 +1,22 @@
+/* Animation keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to the animated sections */
+.animated-section {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.5s; /* Adjust the delay as needed */
+}
+
+.animate {
+  animation-play-state: running;
+}
