@@ -1,0 +1,101 @@
+/* Tailwind CSS Overrides */
+/* .container {
+  max-width: 100%;
+} */
+.glass-element {
+  background: rgba(52, 73, 94, 0.95);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(11.5px);
+  -webkit-backdrop-filter: blur(11.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.card hr {
+  margin-top: auto;
+  /* Pushes the hr to the bottom */
+}
+
+.card {
+  border-color: #2880B9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: inline-block;
+  /* Changed display property */
+  margin-right: 10px;
+  /* Optional: Add margin between cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Aligns items with equal space between them */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #2ECC71;
+  box-shadow: 0 8px 12px rgba(46, 204, 113, 0.5);
+}
+
+.card:hover>.card-title-name {
+  color: #2ECC71;
+}
+
+.card-title-name {
+  transition: all 0.3s ease;
+  color: #D9E4EC;
+}
+
+.guideline-button {
+  border-color: #2ECC71;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: inline-block;
+  /* Changed display property */
+  margin-right: 10px;
+  /* Optional: Add margin between cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Aligns items with equal space between them */
+}
+
+.guideline-button:hover {
+  transform: translateY(-5px);
+  border-color: #3498DB;
+  box-shadow: 0 8px 12px rgba(40, 128, 185, 0.5);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #34495E;
+  /* Adjust background color as needed */
+  padding: 20px 0;
+  /* Adjust padding as needed */
+  text-align: center;
+  color: #D9E4EC;
+  /* Adjust text color as needed */
+}
+
+.committee-description {
+  overflow: hidden;
+}
+
+.committee-description:hover {
+  overflow-y: scroll;
+}
+
+
+.step-title {
+  cursor: pointer;
+}
+
+.step-content {
+  display: none;
+  transition: all 0.3s ease; /* Add transition for smooth visibility change */
+}
+
+.step-content.visible {
+  display: block;
+}
