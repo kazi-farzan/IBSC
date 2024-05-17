@@ -1,11 +1,12 @@
 
 .glass-element {
-  background: rgba(52, 73, 94, 0.95);
+  background: #d9e4ec;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(11.5px);
   -webkit-backdrop-filter: blur(11.5px);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
 
 
 .guideline-button {
@@ -29,11 +30,11 @@
 }
 
 .footer {
-  position: fixed;
+
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #34495E;
+  background-color: #2C3E50;
   /* Adjust background color as needed */
   padding: 20px 0;
   /* Adjust padding as needed */
@@ -96,18 +97,18 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #34495e;
 }
 
 .main {
-  padding: 24px;
+  
   overflow-y: auto; /* Allow vertical scrolling */
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .container {
   display: grid;
-  grid-template-columns: 33.33% 66.67%;
+  grid-template-columns: 22.5% 77.5%;
   height: 100vh;
   min-width:100%;
   overflow-x: hidden; /* Prevent horizontal scrolling */

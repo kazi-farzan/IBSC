@@ -7,14 +7,30 @@
   border-color: #2880B9;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  display: inline-block;
-  /* Changed display property */
-  margin-right: 10px;
-  /* Optional: Add margin between cards */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* Aligns items with equal space between them */
+  display: flex; /* Use flexbox for card */
+  flex-direction: column; /* Arrange items vertically */
+  justify-content: space-between; /* Align items with equal space between them */
+  padding: 1rem; /* Add some padding inside the card */
+  width: 100%; /* Make the card take up the full width of its container */
+  height: 100%; /* Make the card take up the full height of its container */
+}
+
+.card h3 {
+  font-size: 1.5rem; /* Adjust the font size for card title */
+  margin-bottom: 0.5rem; /* Add some space below the title */
+  flex-grow: 0; /* Prevent the title from growing */
+}
+
+.card p {
+  font-size: 1rem; /* Adjust the font size for card text */
+  margin-bottom: 0.25rem; /* Add some space between paragraphs */
+  flex-grow: 0; /* Prevent the text from growing */
+}
+
+.card hr {
+  margin-top: auto; /* Push the hr to the bottom */
+  margin-bottom: 0.5rem; /* Add some space above the hr */
+  flex-shrink: 0; /* Prevent the hr from shrinking */
 }
 
 .card:hover {

@@ -26,10 +26,22 @@
 
 
 .nav-link {
-  color: #2C3E50;
+  color: #D9E4EC;
   transition: color 0.3s ease;
   text-decoration: none;
 }
+
+.normal-links{
+    color: #2880B9;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+.normal-links:hover {
+
+  color: #26AE60;
+  text-decoration: underline;
+}
+
 
 .nav-link:hover {
 
