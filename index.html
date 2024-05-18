@@ -1,9 +1,3 @@
-<!-- TODO: Hamburger
-
-Hamburger
-Email Hyperlinks
-media queries to make it responsive
--->
 
 
 <!DOCTYPE html>
@@ -37,6 +31,7 @@ media queries to make it responsive
   <link rel="stylesheet" href="css/scrollbar.css">
   <link rel="stylesheet" href="css/card.css">
   <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/hamburger.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,62 +43,95 @@ media queries to make it responsive
   <div class="container-1">
     <header class="glass-element sticky top-0 z-50 font-serif">
       <div class="mx-3 flex items-center justify-between">
-        <img src="assets/BioRiddl.png" alt="Logo" class="w-30 h-20">
-        <h1 class="text-6xl font-color-dark font-bold poppins-bold items-center py-2">IBSC</h1>
+        <img src="assets/BioRiddl.png" alt="Logo" class="xl:w-30 xl:h-20 w-18 h-10">
+        <div class="flex items-center justify-between xl:hidden">
+          <button class="hamburger-menu text-3xl focus:outline-none">
+            <span class="hamburger-icon">&#9776;</span>
+          </button>
+        </div>
+        <h1 class="text-3xl xl:text-6xl font-color-dark font-bold poppins-bold items-center py-2">IBSC</h1>
       </div>
     </header>
 
-    <div class="container ">
-      <div class="sidebar glass-element">
+    <div class="sidebar-overlay fixed inset-0 z-40 hidden bg-black bg-opacity-50"></div>
+    <div class="hamburger-sidebar fixed z-50 top-0 left-0 h-screen w-3/4 max-w-xs bg-background-dark p-6 transform -translate-x-full transition-transform duration-300 ease-in-out xl:hidden">
+
+      <div class="flex items-center justify-center h-full">
+        <nav class="pt-8">
+          <ul class="poppins-regular text-sm xl:text-lg">
+            <li><a href="#introduction" class="nav-link block py-4 text-lg xl:text-3xl">Introduction</a></li>
+            <li><a href="#committee" class="nav-link block py-4 text-lg xl:text-3xl">IBSC Committee</a></li>
+            <li><a href="#committee-members" class="nav-link block py-4 text-lg xl:text-3xl">Committee Members</a></li>
+            <li><a href="#guidelines" class="nav-link block py-4 text-lg xl:text-3xl">Guidelines</a></li>
+            <br><br><br><br>
+            <li><a href="https://ird.iitd.ac.in/IRD/IBSC_Protocol_Form.pdf" target="_blank" class="inline-block">
+                <div class="text-sm xl:text-3xl p-4 poppins-regular font-color-light border-4 rounded-xl guideline-button">View Form</div>
+              </a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container grid xl:grid-cols-[22.5%,77.5%] grid-cols-1 ">
+
+      <div class="sidebar glass-element hidden xl:block">
         <div class="flex items-center justify-center h-full">
           <nav class="pt-8">
-            <ul class="poppins-regular text-lg">
-              <li><a href="#introduction" class="nav-link block py-4 text-3xl">Introduction</a></li>
-              <li><a href="#committee" class="nav-link block py-4 text-3xl">IBSC Committee</a></li>
-              <li><a href="#committee-members" class="nav-link block py-4 text-3xl">Committee Members</a></li>
-              <li><a href="#guidelines" class="nav-link block py-4 text-3xl">Guidelines</a></li><br><br><br><br>
+            <ul class="poppins-regular text-sm xl:text-lg">
+              <li><a href="#introduction" class="nav-link block py-4 text-sm xl:text-3xl">Introduction</a></li>
+              <li><a href="#committee" class="nav-link block py-4 text-sm xl:text-3xl">IBSC Committee</a></li>
+              <li><a href="#committee-members" class="nav-link block py-4 text-sm xl:text-3xl">Committee Members</a></li>
+              <li><a href="#guidelines" class="nav-link block py-4 text-sm xl:text-3xl">Guidelines</a></li><br><br><br><br>
               <li><a href="https://ird.iitd.ac.in/IRD/IBSC_Protocol_Form.pdf" target="_blank" class="inline-block">
-                  <div class="text-3xl p-4  poppins-regular font-color-light border-4 rounded-xl guideline-button">View Form</div>
+                  <div class="text-sm xl:text-3xl p-4  poppins-regular font-color-light border-4 rounded-xl guideline-button">View Form</div>
                 </a></li>
             </ul>
           </nav>
 
         </div>
       </div>
+
+
       <main class="main !scroll-smooth">
         <!-- Content Goes Here -->
-        <section id="introduction" class="py-24 px-24 h-screen animated-section">
+        <section id="introduction" class="py-24 px-12 xl:px-24 xl:h-screen animated-section">
           <div class="  mx-auto">
-            <h2 class="text-7xl mb-8 poppins-regular text-accent-color-2-dark">INTRODUCTION</h2>
-            <p class="text-2xl px-6 leading-relaxed font-sans font-color-dark text-justify">In India, the manufacture, import, research, and release of Genetically Engineered Organisms (GEOs), as well as products made by the use of such organisms are
+            <h2 class="text-4xl xl:text-7xl mb-8 poppins-regular text-accent-color-2-dark">INTRODUCTION</h2>
+            <p class="text-lg xl:text-2xl px-6 leading-relaxed font-sans font-color-dark text-sm xl:text-justify">In India, the manufacture, import, research, and release of Genetically Engineered Organisms (GEOs), as well as products made by the use
+              of such organisms are
               governed by The Rules for Manufacture, Use, Import, Export and Storage of Hazardous Microorganisms, Genetically Engineered Organisms or Cells, (commonly referred to as “Rules 1989) notified by the Ministry of Environment, Forest and
               Climate Change (MoEF&CC), on December 5, 1989, under the Environment (Protection) Act 1986. </p>
-            <p class="text-2xl px-6 leading-relaxed font-sans mt-4 font-color-dark text-justify">The Rules 1989 are broad in scope and cover the area of research as well as large-scale handling of hazardous microorganisms, GE organisms, or cells and
+            <p class="text-lg xl:text-2xl px-6 leading-relaxed font-sans mt-4 font-color-dark text-sm xl:text-justify">The Rules 1989 are broad in scope and cover the area of research as well as large-scale handling of hazardous microorganisms, GE
+              organisms, or cells and
               products thereof. In order to implement the Rules in the entire country, six competent authorities and roles have been notified under the Rules 1989.
             </p>
-            <p class="text-2xl px-6 leading-relaxed font-sans mt-4 font-color-dark text-justify">Institutions handling microorganisms or GE organisms with inherent risks are required, with the assistance of the Institutional Biosafety Committee
+            <p class="text-lg xl:text-2xl px-6 leading-relaxed font-sans mt-4 font-color-dark text-sm xl:text-justify">Institutions handling microorganisms or GE organisms with inherent risks are required, with the assistance of the Institutional
+              Biosafety Committee
               (IBSC), to develop an on-site emergency plan. This plan should be regularly updated in accordance with the manuals/guidelines provided by the RCGM and copies should be made available to the District Level Committee/State Biotechnology
               Coordination Committee and the Genetic Engineering Appraisal Committee.
             </p>
             <a href="https://ibkp.dbtindia.gov.in/Registration/Index" target="_blank" class="inline-block">
-              <div class="text-3xl p-8  font-bold m-8 poppins-regular font-color-dark border-4 rounded-xl guideline-button">Learn more</div>
+              <div class="text-sm xl:text-3xl p-8  font-bold m-8 poppins-regular font-color-dark border-4 rounded-xl guideline-button">Learn more</div>
             </a>
 
           </div>
         </section>
-        <section id="committee" class="py-24 px-24 bg-background animated-section">
+        <section id="committee" class="py-24 px-12 xl:px-24 bg-background animated-section">
           <div class="  mx-auto">
-            <h2 class="text-7xl mb-4 poppins-regular text-accent-color-2-dark">IBSC COMMITTEE</h2>
+            <h2 class="text-4xl xl:text-7xl mb-4 poppins-regular text-accent-color-2-dark">IBSC COMMITTEE</h2>
             <div>
-              <p class="text-2xl leading-relaxed px-6 font-sans font-color-dark text-justify">The Institutional Biosafety Committee (IBSC) of RIIDL Foundation is a registered and accredited committee under the Department of Biotechnology (DBT),
+              <p class="text-sm xl:text-2xl leading-relaxed px-6 font-sans font-color-dark text-sm xl:text-justify">The Institutional Biosafety Committee (IBSC) of RIIDL Foundation is a registered and accredited committee under the Department of
+                Biotechnology (DBT),
                 Ministry of Science and Technology, Government of India. In accordance with DBT guidelines, the IBSC is primarily responsible for reviewing and granting clearance for project proposals falling under restricted categories of research
                 involving genetically modified organisms (GMOs), living modified organisms (LMOs), and recombinant DNA (rDNA) materials while adhering to DBT guidelines. RCGM makes decisions based on applications approved by the IBSC.
               </p>
-              <p class="text-2xl leading-relaxed px-6 font-sans mt-4 font-color-dark text-justify">IBSC, apart from formulating biosafety programs for institutional research activities, conducts onsite evaluations, and assessments, and monitors
+              <p class="text-sm xl:text-2xl leading-relaxed px-6 font-sans mt-4 font-color-dark text-sm xl:text-justify">IBSC, apart from formulating biosafety programs for institutional research activities, conducts onsite evaluations, and
+                assessments, and monitors
                 research facilities, ensuring adherence to biosafety guidelines and procedures. It oversees the regulatory process at the institutional level, updating principal investigators on project approvals, and rejections, and providing
                 assistance on biosafety issues related to genetic material research, ensuring the safety of all involved. IBSC assesses field experiments and reviews emergency plans to ensure adequate risk assessment and management.
               </p>
-              <p class="text-2xl leading-relaxed px-6 font-sans mt-4 font-color-dark text-justify">The Chairperson, Member Secretary, Biosafety Officer, and DBT nominee of IBSC have specific roles. Additionally, Principal Investigators of projects
+              <p class="text-sm xl:text-2xl leading-relaxed px-6 font-sans mt-4 font-color-dark text-sm xl:text-justify">The Chairperson, Member Secretary, Biosafety Officer, and DBT nominee of IBSC have specific roles. Additionally, Principal
+                Investigators of projects
                 are pivotal in complying with the regulatory framework. The constitution, composition, role and functions, information for compliance requirements, and processes to be followed while dealing with hazardous microorganisms, GE organisms
                 or cells, and products thereof in line with Rules 1989 is described in <a class="normal-links" href="https://drive.google.com/file/d/1JPZw1JD6HIGABhw90E49jnHBZYLeh86i/view?usp=sharing" target="_blank">“Guidelines and Handbook for
                   Institutional Biosafety Committee”</a>.
@@ -111,9 +139,9 @@ media queries to make it responsive
             </div>
           </div>
         </section>
-        <section id="committee-members" class="py-8 px-24 animated-section">
+        <section id="committee-members" class="py-8 px-12 xl:px-24 animated-section">
           <div class="bg-background-dark px-8 py-16 rounded-3xl ">
-            <h2 class="text-7xl mb-8 poppins-regular text-accent-color-2-dark">COMMITTEE MEMBERS</h2>
+            <h2 class="text-4xl xl:text-7xl mb-8 poppins-regular text-accent-color-2-dark">COMMITTEE MEMBERS</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
               <!-- Committee members cards -->
 
@@ -121,11 +149,11 @@ media queries to make it responsive
               <a href="https://www.linkedin.com/in/bhavnapandya/" target="_blank">
                 <div class="card p-6 border-4 bg-light rounded-3xl">
                   <!-- <img src="assets/placeholder.jpg" alt="Placeholder" class="w-full h-auto mb-4 rounded-xl"> -->
-                  <h3 class="card-title-name text-3xl font-bold mb-4 poppins-regular font-color-light">Ms Bhavna Pandya</h3>
-                  <p class="card-title-name text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Chairperson</p>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Microbiology and Synthetic Biology</p>
-                  <hr class="text-accent-color-1-dark">
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Bioriidl Head, RIIDL Foundation</p>
+                  <h3 class="card-title-name text-sm xl:text-3xl font-bold mb-4 poppins-regular font-color-light">Ms Bhavna Pandya</h3>
+                  <p class="card-title-name text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Chairperson</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Microbiology and Synthetic Biology</p>
+                  <hr class="text-sm xl:text-accent-color-1-dark">
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Bioriidl Head, RIIDL Foundation</p>
 
                 </div>
               </a>
@@ -134,11 +162,11 @@ media queries to make it responsive
               <a href="https://www.linkedin.com/in/vainav-patel-9519389/" target="_blank">
                 <div class="card p-6 border-4 bg-light rounded-3xl">
                   <!-- <img src="assets/placeholder.jpg" alt="Placeholder" class="w-full h-auto mb-4 rounded-xl"> -->
-                  <h3 class="card-title-name text-3xl font-bold mb-4 poppins-regular font-color-light">Dr Vainav Patel</h3>
-                  <p class="card-title-name text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">DBT Nominee</p>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Biochemistry and Virology</p>
+                  <h3 class="card-title-name text-sm xl:text-3xl font-bold mb-4 poppins-regular font-color-light">Dr Vainav Patel</h3>
+                  <p class="card-title-name text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">DBT Nominee</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Biochemistry and Virology</p>
                   <hr>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Scientist E and Head, ICMR-NIRRH, Department of Biochemistry and Virology</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Scientist E and Head, ICMR-NIRRH, Department of Biochemistry and Virology</p>
 
 
                 </div>
@@ -148,11 +176,11 @@ media queries to make it responsive
               <a href="https://www.linkedin.com/in/apekshakumari-patel/" target="_blank">
                 <div class="card p-6 border-4 bg-light rounded-3xl">
                   <!-- <img src="assets/placeholder.jpg" alt="Placeholder" class="w-full h-auto mb-4 rounded-xl"> -->
-                  <h3 class="card-title-name text-3xl font-bold mb-4 poppins-regular font-color-light">Ms. Apekshakumari Patel</h3>
-                  <p class="card-title-name text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Member Secretary</p>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Microbiology and Synthetic Biology</p>
+                  <h3 class="card-title-name text-sm xl:text-3xl font-bold mb-4 poppins-regular font-color-light">Ms. Apekshakumari Patel</h3>
+                  <p class="card-title-name text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Member Secretary</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Microbiology and Synthetic Biology</p>
                   <hr>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Research Assistant, RIIDL Foundation</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Research Assistant, RIIDL Foundation</p>
                 </div>
               </a>
 
@@ -160,11 +188,11 @@ media queries to make it responsive
               <a href="https://uat.somaiya-ayurvihar.org/mr/doctor/303" target="_blank">
                 <div class="card p-6 border-4 bg-light rounded-3xl">
                   <!-- <img src="assets/placeholder.jpg" alt="Placeholder" class="w-full h-auto mb-4 rounded-xl"> -->
-                  <h3 class="card-title-name text-3xl font-bold mb-4 poppins-regular font-color-light">Dr Jyotirlatha Bangera</h3>
-                  <p class="card-title-name text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Biosafety Officer</p>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Medicine</p>
+                  <h3 class="card-title-name text-sm xl:text-3xl font-bold mb-4 poppins-regular font-color-light">Dr Jyotirlatha Bangera</h3>
+                  <p class="card-title-name text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Biosafety Officer</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Medicine</p>
                   <hr>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Professor & Head of Department, K.J. Somaiya Medical College</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Professor & Head of Department, K.J. Somaiya Medical College</p>
                 </div>
               </a>
 
@@ -172,11 +200,11 @@ media queries to make it responsive
               <a href="https://www.linkedin.com/in/deepak-modi-2894b514/" target="_blank">
                 <div class="card p-6 border-4 bg-light rounded-3xl">
                   <!-- <img src="assets/placeholder.jpg" alt="Placeholder" class="w-full h-auto mb-4 rounded-xl"> -->
-                  <h3 class="card-title-name text-3xl font-bold mb-4 poppins-regular font-color-light">Dr Deepak Modi</h3>
-                  <p class="card-title-name text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">External Expert</p>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Genetics</p>
+                  <h3 class="card-title-name text-sm xl:text-3xl font-bold mb-4 poppins-regular font-color-light">Dr Deepak Modi</h3>
+                  <p class="card-title-name text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">External Expert</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Genetics</p>
                   <hr>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Scientist F, ICMR-NIRRH</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Scientist F, ICMR-NIRRH</p>
                 </div>
               </a>
 
@@ -184,11 +212,11 @@ media queries to make it responsive
               <a href="https://www.linkedin.com/in/maithiliathavale/" target="_blank">
                 <div class="card p-6 border-4 bg-light rounded-3xl">
                   <!-- <img src="assets/placeholder.jpg" alt="Placeholder" class="w-full h-auto mb-4 rounded-xl"> -->
-                  <h3 class="card-title-name text-3xl font-bold mb-4 poppins-regular font-color-light">Dr Maithili Athavale</h3>
-                  <p class="card-title-name text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">External Expert</p>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Cancer Biology</p>
+                  <h3 class="card-title-name text-sm xl:text-3xl font-bold mb-4 poppins-regular font-color-light">Dr Maithili Athavale</h3>
+                  <p class="card-title-name text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">External Expert</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Cancer Biology</p>
                   <hr>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Assistant General Manager R&D (Cancer Biology), Godavari Biorefineries Pvt Ltd</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Assistant General Manager R&D (Cancer Biology), Godavari Biorefineries Pvt Ltd</p>
                 </div>
               </a>
 
@@ -196,11 +224,11 @@ media queries to make it responsive
               <a href="https://www.linkedin.com/in/dr-seema-sambrani-9b4b5068/" target="_blank">
                 <div class="card p-6 border-4 bg-light rounded-3xl">
                   <!-- <img src="assets/placeholder.jpg" alt="Placeholder" class="w-full h-auto mb-4 rounded-xl"> -->
-                  <h3 class="card-title-name text-3xl font-bold mb-4 poppins-regular font-color-light">Dr Seema Sambrani</h3>
-                  <p class="card-title-name text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Internal Expert</p>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Biotechnology</p>
+                  <h3 class="card-title-name text-sm xl:text-3xl font-bold mb-4 poppins-regular font-color-light">Dr Seema Sambrani</h3>
+                  <p class="card-title-name text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Internal Expert</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Biotechnology</p>
                   <hr>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Assistant Director, SK Somaiya College</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Assistant Director, SK Somaiya College</p>
                 </div>
               </a>
 
@@ -208,11 +236,11 @@ media queries to make it responsive
               <a href="https://www.linkedin.com/in/lolly-jain/" target="_blank">
                 <div class="card p-6 border-4 bg-light rounded-3xl">
                   <!-- <img src="assets/placeholder.jpg" alt="Placeholder" class="w-full h-auto mb-4 rounded-xl"> -->
-                  <h3 class="card-title-name text-3xl font-bold mb-4 poppins-regular font-color-light">Dr Lolly Jain</h3>
-                  <p class="card-title-name text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Internal Expert</p>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Microbiology</p>
+                  <h3 class="card-title-name text-sm xl:text-3xl font-bold mb-4 poppins-regular font-color-light">Dr Lolly Jain</h3>
+                  <p class="card-title-name text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Internal Expert</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Microbiology</p>
                   <hr>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Vice Principal, K. J. Somaiya College of Science and Commerce</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Vice Principal, K. J. Somaiya College of Science and Commerce</p>
                 </div>
               </a>
 
@@ -220,11 +248,11 @@ media queries to make it responsive
               <a href="https://www.linkedin.com/in/kafil-ahmed-phd-93140bb/" target="_blank">
                 <div class="card p-6 border-4 bg-light rounded-3xl">
                   <!-- <img src="assets/placeholder.jpg" alt="Placeholder" class="w-full h-auto mb-4 rounded-xl"> -->
-                  <h3 class="card-title-name text-3xl font-bold mb-4 poppins-regular font-color-light">Dr Kafil Ahmed</h3>
-                  <p class="card-title-name text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Internal Expert</p>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Biotechnology</p>
+                  <h3 class="card-title-name text-sm xl:text-3xl font-bold mb-4 poppins-regular font-color-light">Dr Kafil Ahmed</h3>
+                  <p class="card-title-name text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Internal Expert</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Biotechnology</p>
                   <hr>
-                  <p class="text-2xl leading-relaxed font-sans mt-4 font-color-light text-justify">Chief Scientific Officer, Techinvention Lifecare Pvt Ltd</p>
+                  <p class="text-sm xl:text-2xl leading-relaxed font-sans mt-4 font-color-light text-sm xl:text-justify">Chief Scientific Officer, Techinvention Lifecare Pvt Ltd</p>
                 </div>
               </a>
 
@@ -232,12 +260,12 @@ media queries to make it responsive
           </div>
         </section>
 
-        <section id="guidelines" class="py-24 px-24 animated-section">
+        <section id="guidelines" class="py-24 px-12 xl:px-24 animated-section">
           <div class="  mx-auto">
-            <h2 class="text-7xl mb-4 poppins-regular text-accent-color-2-dark">GUIDELINES</h2>
-            <h3 class="text-3xl mt-24 leading-relaxed font-sans font-color-dark text-left">How to apply for ethical clearance from the Institutional Biosafety Committee (IBSC).</h3>
+            <h2 class="text-4xl xl:text-7xl mb-4 poppins-regular text-accent-color-2-dark">GUIDELINES</h2>
+            <h3 class="text-sm xl:text-3xl mt-24 leading-relaxed font-sans font-color-dark text-sm xl:text-left">How to apply for ethical clearance from the Institutional Biosafety Committee (IBSC).</h3>
             <a href="https://ird.iitd.ac.in/IRD/IBSC_Protocol_Form.pdf" target="_blank" class="inline-block">
-              <div class="text-3xl p-8  font-bold m-8 poppins-regular font-color-dark border-4 rounded-xl guideline-button">View Form</div>
+              <div class="text-sm xl:text-3xl p-8  font-bold m-8 poppins-regular font-color-dark border-4 rounded-xl guideline-button">View Form</div>
             </a>
 
 
@@ -245,14 +273,16 @@ media queries to make it responsive
               <!-- Step 1 -->
               <hr class="hr-dark mt-4 mb-4">
               <div class="step mb-6">
-                <div class="text-3xl p-4 poppins-regular font-color-dark step-title border-4 rounded-xl guideline-button">Steps for Application Process</div>
+                <div class="text-sm xl:text-3xl p-4 poppins-regular font-color-dark step-title border-4 rounded-xl guideline-button">Steps for Application Process</div>
+
+
 
                 <div class="step-content hidden">
-                  <ol type="1" class="text-2xl leading-loose numbered-list font-sans font-color-dark ">
+                  <ol type="1" class="text-sm xl:text-2xl leading-loose numbered-list font-sans font-color-dark ">
                     <li>Download the application form from the IBSC Protocol Form link.</li>
-                    <li>Complete the application form and submit a hard copy to the office of the Member Secretary, RIIDL Foundation. Additionally, send a soft copy of the application via email (to <a class="normal-links"
-                        href="bhavna.pandya@somaiya.edu" target="_blank">bhavna.pandya@somaiya.edu</a> and CC
-                      <a class="normal-links" href="apekshakumari@somaiya.edu" target="_blank">apekshakumari@somaiya.edu</a>).
+                    <li>Complete the application form and submit a hard copy to the office of the Member Secretary, RIIDL Foundation. Additionally, send a soft copy of the application via email (to <a
+                        href="mailto:bhavna.pandya@somaiya.edu?subject=feedback" target="_blank" class="normal-links">bhavna.pandya@somaiya.edu</a> and CC
+                      <a href="mailto:apekshakumari@somaiya.edu?subject=feedback" target="_blank" class="normal-links">apekshakumari@somaiya.edu</a>).
                     </li>
                     <li>Ensure the application is submitted at least 30 days in advance of the scheduled IBSC meetings (i.e., by October 31 for the September meeting, and by February 28 for the February meeting).</li>
                     <li>It is the primary investigator's (PI) responsibility to inform IBSC about experiments involving rDNA technology, GMOs, or LMOs before submitting a grant application to a funding agency.</li>
@@ -275,9 +305,9 @@ media queries to make it responsive
               <hr class="hr-dark mt-4 mb-4">
               <!-- Step 2 -->
               <div class="step mb-6">
-                <div class="text-3xl p-4 mb-4 poppins-regular font-color-dark step-title border-4 rounded-xl guideline-button">Steps for Selection Process</div>
+                <div class="text-sm xl:text-3xl p-4 mb-4 poppins-regular font-color-dark step-title border-4 rounded-xl guideline-button">Steps for Selection Process</div>
                 <div class="step-content hidden">
-                  <ol type="1" class="text-2xl leading-loose numbered-list font-sans font-color-dark ">
+                  <ol type="1" class="text-sm xl:text-2xl leading-loose numbered-list font-sans font-color-dark ">
                     <li>IBSC will schedule a meeting and communicate the date to the applicant at least 15 days in advance.</li>
                     <li>The applicant will require to present their proposal to the committee during the meeting.</li>
                     <li>A decision will be communicated to the applicant within one week after the meeting.</li>
@@ -286,14 +316,15 @@ media queries to make it responsive
               </div>
               <hr class="hr-dark mt-4 mb-4">
             </div>
-            <p class="text-3xl leading-loose font-sans font-color-dark">Note:</p>
-            <p class="text-2xl leading-loose font-sans font-color-dark">All applicants are advised to review the <a href="https://dbtindia.gov.in/sites/default/files/uploadfiles/Regulations_%26_Guidelines_for_Reocminant_DNA_Research_and_Biocontainment%2C2017.pdf" class="normal-links" target="
+            <p class="text-sm xl:text-3xl leading-loose font-sans font-color-dark">Note:</p>
+            <p class="text-sm xl:text-2xl leading-loose font-sans font-color-dark">All applicants are advised to review the <a
+                href="https://dbtindia.gov.in/sites/default/files/uploadfiles/Regulations_%26_Guidelines_for_Reocminant_DNA_Research_and_Biocontainment%2C2017.pdf" class="normal-links" target="
 
             ">Indian Biosafety Rules & Regulations</a>.</p>
           </div>
         </section>
         <footer class="footer bg-background-dark-accent py-2 mt-8 ">
-          <div class="  text-lg text-center font-sans">
+          <div class="  text-sm xl:text-lg text-sm xl:text-center font-sans">
             <p>Copyright &copy; 2017 Bioriidl. All rights reserved.</p>
           </div>
         </footer>

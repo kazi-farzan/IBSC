@@ -24,4 +24,19 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+
+  // Hamburger menu functionality
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const sidebar = document.querySelector('.hamburger-sidebar');
+  const sidebarOverlay = document.querySelector('.sidebar-overlay');
+
+  hamburgerMenu.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+    sidebarOverlay.classList.toggle('hidden');
+  });
+
+  sidebarOverlay.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    sidebarOverlay.classList.add('hidden');
+  });
 });

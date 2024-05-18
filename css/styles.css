@@ -101,14 +101,14 @@
 }
 
 .main {
-  
+
   overflow-y: auto; /* Allow vertical scrolling */
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 22.5% 77.5%;
+  /* display: grid;
+  grid-template-columns: 22.5% 77.5%; */
   height: 100vh;
   min-width:100%;
   overflow-x: hidden; /* Prevent horizontal scrolling */
